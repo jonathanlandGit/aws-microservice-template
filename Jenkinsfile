@@ -16,24 +16,24 @@ pipeline {
                 sh './mvnw clean compile'
             }
         }
-        stage('Test') {
-            steps {
-                sh './mvnw test'
-            }
-        }
+//         stage('Test') {
+//             steps {
+//                 sh './mvnw test'
+//             }
+//         }
         stage('Packaging') {
             steps {
                 sh './mvnw package -DskipTests=true'
             }
         }
-        stage ('Static Code Analysis') {
-            steps {
-                // required SonarQube server configured in Jenkins System Configuration
-                withSonarQubeEnv(credentialsId: 'sonarqube-credentials', installationName: 'MySonarQubeServer') {
-                    sh './mvnw sonar:sonar'
-                }
-            }
-        }
+//         stage ('Static Code Analysis') {
+//             steps {
+//                 // required SonarQube server configured in Jenkins System Configuration
+//                 withSonarQubeEnv(credentialsId: 'sonarqube-credentials', installationName: 'MySonarQubeServer') {
+//                     sh './mvnw sonar:sonar'
+//                 }
+//             }
+//         }
         stage('Deploy - Staging') {
             steps {
                 sh './deploy.sh staging'
@@ -74,7 +74,7 @@ pipeline {
             // Comment/Uncomment the ones you would need/use
 
             // Send email
-            mail to: 'colin.but@email.com',
+            mail to: 'jonathanland.git@gmail.com',
                  subject: "Passed Pipeline: ${currentBuild.fullDisplayName}",
                  body: "${env.BUILD_URL} - ${env.JOB_NAME} #${env.BUILD_NUMBER} has passed."
 
@@ -93,7 +93,7 @@ pipeline {
             // Comment/Uncomment the ones you would need/use
 
             // Send email
-            mail to: 'colin.but@email.com',
+            mail to: 'jonathanland.git@gmail.com',
                  subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
                  body: "Something went wrong with ${env.BUILD_URL}"
 
@@ -102,9 +102,9 @@ pipeline {
                         color: 'RED'
 
             // Slack Integration
-            slackSend channel: '#room',
-                      color: 'bad',
-                      message: "${env.JOB_NAME} #${env.BUILD_NUMBER} has failed."
+//             slackSend channel: '#room',
+//                       color: 'bad',
+//                       message: "${env.JOB_NAME} #${env.BUILD_NUMBER} has failed."
         }
         unstable {
             echo 'The build was marked unstable'

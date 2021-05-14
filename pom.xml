@@ -22,12 +22,12 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
-        <docker.image.prefix>colinbut</docker.image.prefix>
+        <docker.image.prefix>jonathanland</docker.image.prefix>
         <dockerfile-maven-version>1.4.8</dockerfile-maven-version>
 	</properties>
 
 	<scm>
-    	<developerConnection>scm:git:https://github.com/colinbut/microservices-template.git</developerConnection>
+    	<developerConnection>scm:git:https://github.com/jonathanlandGit/aws-microservice-template.git</developerConnection>
   	  <tag>HEAD</tag>
   </scm>
 

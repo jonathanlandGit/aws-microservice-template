@@ -13,7 +13,7 @@ spec:
         app: microservices-template
     spec:
       containers:
-      - name: microservices-template
-        image: colinbut/microservices-template:1.0.0-SNAPSHOT
-        ports:
-        - containerPort: 8080
+        - name: microservices-template
+          image: jonathanland/microservices-template:1.0.0-SNAPSHOT
+          ports:
+            - containerPort: 8080
