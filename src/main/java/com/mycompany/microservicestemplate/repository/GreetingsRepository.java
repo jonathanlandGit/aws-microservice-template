@@ -32,7 +32,6 @@ public class GreetingsRepository {
         greetings.add(new Greeting("Hola, ", "Think of all the people who make you happy!"));
         greetings.add(new Greeting("Hey man , ", "Just keep on keeping on!"));
 //        greetings.add(new Greeting("Hey man , ", "Just keep on keeping on!"));
-//        greetings.add(new Greeting("Hey man , ", "Just keep on keeping on!"));
 
         LOGGER.info("Populated greetings {}", greetings);
     }
