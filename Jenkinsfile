@@ -1,10 +1,11 @@
 pipeline {
-//     agent any
-    agent {
-        docker {
-             image 'maven:3.8.1-adoptopenjdk-11'
-        }
-    }
+    agent any
+//     agent {
+//         docker {
+//             label 'master'
+//             image 'maven:3.3.3'
+//         }
+//     }
 
     /** 
      * Multiple stages that gets run on Jenkins to build & test the merged code
